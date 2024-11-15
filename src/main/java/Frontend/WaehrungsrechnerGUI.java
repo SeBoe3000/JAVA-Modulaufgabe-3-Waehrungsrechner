@@ -164,6 +164,34 @@ public class WaehrungsrechnerGUI {
         };
         wechselkurs_chb.addActionListener(wechselkurs_ausgrauen);
 
+        // Wenn der Eingabe- oder Ausgabekurs verändert wird und beide angegeben sind, dann den Wechselkurs eintragen
+        /*ActionListener wechselkurs_default = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String eingabe = RadioButton.getTextofRadiobutton(eingabe_group);
+                String ausgabe = RadioButton.getTextofRadiobutton(ausgabe_group);
+
+                if (eingabe.equals("Euro")){
+                    System.out.println("Hallo");
+                } else if (calculate_sign.equals("USD")) {
+                    System.out.println("du");
+                } else {
+                    wechselkurs = " ";
+                }
+
+            }
+        };
+        ein_euro_rbtn.addActionListener(wechselkurs_default);
+        ein_usd_rbtn.addActionListener(wechselkurs_default);
+        ein_bath_rbtn.addActionListener(wechselkurs_default);
+        ein_yen_rbtn.addActionListener(wechselkurs_default);
+        ein_zloty_rbtn.addActionListener(wechselkurs_default);
+        aus_euro_rbtn.addActionListener(wechselkurs_default);
+        aus_usd_rbtn.addActionListener(wechselkurs_default);
+        aus_bath_rbtn.addActionListener(wechselkurs_default);
+        aus_yen_rbtn.addActionListener(wechselkurs_default);
+        aus_zloty_rbtn.addActionListener(wechselkurs_default);
+        */
     }
 
 
