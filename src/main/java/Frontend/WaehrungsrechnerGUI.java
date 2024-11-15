@@ -2,6 +2,8 @@ package Frontend;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class WaehrungsrechnerGUI {
     private static final JFrame frame = new JFrame("Waehrungsrechner");
@@ -105,6 +107,7 @@ public class WaehrungsrechnerGUI {
         wechselkurs_panel.setLayout(new BoxLayout(wechselkurs_panel, BoxLayout.X_AXIS));
         wechselkurs_panel.add(wechselkurs);
         wechselkurs_panel.add(wechselkurs_chb);
+        wechselkurs.setEnabledFalse(); // Wechselkurs zu Beginn für die Verwaltung sperren
 
         gbc.gridy = 3; // Spalte
         gbc.gridx = 0; // Zeile
@@ -126,7 +129,7 @@ public class WaehrungsrechnerGUI {
         frame.add(panel);
     }
 
-    private static void fixxedFrame() {
+    private void fixxedFrame() {
         // Größe vom Fenster auf Hälte der Bildschirmgröße in die Mitte setzen
         Dimension dim = new Dimension(1920, 1080);
         dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -137,7 +140,30 @@ public class WaehrungsrechnerGUI {
         frame.setVisible(true);
     }
 
-    private static void buttonListener() {
+    private void buttonListener() {
+        /* To-Do's:
+        - Feld: ausgabe_group (Ausgabewährung ausgewählt) --> wenn Eingabewährung ausgewählt, dann wechselkurs einfügen
+        - Feld: calc_btn --> Berechnung durchführen.
+
+        Für Berechnung:
+        - Eingabe, Eingabekurs, Ausgabekurs und Wechselkurs (wenn bearbeitbar) muss eingegeben sein.
+        - Eingabekurs darf nicht gleich Ausgabekurs sein
+        - Bei Fehler ggf. Felder rot umranden
+        */
+
+        // Feld Wechselkurs darf nur bearbeitet werden, wenn Checkbox dahinter markiert wurde.
+        ActionListener wechselkurs_ausgrauen = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(wechselkurs_chb.isSelected()){
+                    wechselkurs.setEnabledTrue();
+                } else {
+                    wechselkurs.setEnabledFalse();
+                }
+            }
+        };
+        wechselkurs_chb.addActionListener(wechselkurs_ausgrauen);
+
     }
 
 
