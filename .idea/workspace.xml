@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db45f4eb-0723-4714-a948-e568008ad2fa" name="Changes" comment="Branchwechsel">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="db45f4eb-0723-4714-a948-e568008ad2fa" name="Changes" comment="Größe und Platzierung Fenster angegeben">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/EingabePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/EingabePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/WaehrungsrechnerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/WaehrungsrechnerGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,12 +75,30 @@
       <option name="project" value="LOCAL" />
       <updated>1731691837536</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="An allgemeinen Dateien durch vorherigen Commit etwas kaputt gemacht, das wieder korrigiert.">
+      <option name="closed" value="true" />
+      <created>1731696230369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731696230369</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Größe und Platzierung Fenster angegeben">
+      <option name="closed" value="true" />
+      <created>1731696435944</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731696435944</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Umgestellt auf Maven Projekt" />
     <MESSAGE value="Branchwechsel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Branchwechsel" />
+    <MESSAGE value="An allgemeinen Dateien durch vorherigen Commit etwas kaputt gemacht, das wieder korrigiert." />
+    <MESSAGE value="Größe und Platzierung Fenster angegeben" />
+    <option name="LAST_COMMIT_MESSAGE" value="Größe und Platzierung Fenster angegeben" />
   </component>
 </project>

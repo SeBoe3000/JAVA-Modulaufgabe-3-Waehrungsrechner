@@ -1,4 +1,47 @@
 package Frontend;
 
-public class EingabePanel {
+import javax.swing.*;
+import java.awt.*;
+
+public class EingabePanel extends JPanel{
+    private JPanel panel = new JPanel();
+    private JLabel label = new JLabel();
+    private JTextField textField = new JTextField();
+    ButtonGroup group = new ButtonGroup();
+
+    public EingabePanel(String labelText){
+        label.setText(labelText);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+        panel.add(label);
+        panel.add(textField);
+        //textField.setMinimumSize(new Dimension(200,50));
+        textField.setPreferredSize(new Dimension(200,50));
+        this.add(panel);
+    }
+    public String getTextfield(){
+        return textField.getText();
+    }
+
+    public String getWaehrung(){
+        return textField.getText();
+    }
+
+    // Methoden zum Schriftfarbe Eingabefeld auf rot setzen und zurück bei einem Fehler:
+    public void setError(){
+        textField.setForeground(Color.RED);
+    }
+
+    public void removeError(){
+        textField.setForeground(Color.BLACK);
+    }
+
+    // Methoden zum möglichen ausgrauen
+    public void setEnabledTrue(){
+        textField.setEnabled(true);
+    }
+
+    public void setEnabledFalse(){
+        textField.setEnabled(false);
+    }
+
 }
