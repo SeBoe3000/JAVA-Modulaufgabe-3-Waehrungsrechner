@@ -154,18 +154,40 @@ public class WaehrungsrechnerGUI {
         /* Wenn Checkbox hinter Wechselkurs markiert, dann
         - Feld Wechselkurs editierbar machen
         - Wechselkurs leeren
+        - Felder Eingabe- und Ausgabewährung sperren
         Wenn Checkbox hinter Wechselkurs demarkiert, dann
         - Feld Wechselkurs sperren
+        - Felder Eingabe- und Ausgabewährung aktivieren
         - Wechselkurs ermitteln, wenn Eingabe- und Ausgabekurs angegeben */
         ActionListener wechselkurs_ausgrauen = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(wechselkurs_chb.isSelected()){
-                    wechselkurs.setEnabledTrue();
                     wechselkurs.setTextField(" ");
+                    wechselkurs.setEnabledTrue();
+                    ein_euro_rbtn.setEnabled(false);
+                    ein_usd_rbtn.setEnabled(false);
+                    ein_bath_rbtn.setEnabled(false);
+                    ein_yen_rbtn.setEnabled(false);
+                    ein_zloty_rbtn.setEnabled(false);
+                    aus_euro_rbtn.setEnabled(false);
+                    aus_usd_rbtn.setEnabled(false);
+                    aus_bath_rbtn.setEnabled(false);
+                    aus_yen_rbtn.setEnabled(false);
+                    aus_zloty_rbtn.setEnabled(false);
                 } else {
                     wechselkurs.setEnabledFalse();
                     changeWechselkurs();
+                    ein_euro_rbtn.setEnabled(true);
+                    ein_usd_rbtn.setEnabled(true);
+                    ein_bath_rbtn.setEnabled(true);
+                    ein_yen_rbtn.setEnabled(true);
+                    ein_zloty_rbtn.setEnabled(true);
+                    aus_euro_rbtn.setEnabled(true);
+                    aus_usd_rbtn.setEnabled(true);
+                    aus_bath_rbtn.setEnabled(true);
+                    aus_yen_rbtn.setEnabled(true);
+                    aus_zloty_rbtn.setEnabled(true);
                 }
             }
         };
