@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db45f4eb-0723-4714-a948-e568008ad2fa" name="Changes" comment="Auslesen Badiobutton eingefügt in Methode und &quot;enn der Eingabe- oder Ausgabekurs verändert wird und beide angegeben sind, dann den Wechselkurs eintragen&quot; angefangen">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/EingabePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/EingabePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/WaehrungsrechnerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/WaehrungsrechnerGUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="db45f4eb-0723-4714-a948-e568008ad2fa" name="Changes" comment="automatische Änderung XML-Dateien hochgeladen" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +132,31 @@
       <option name="project" value="LOCAL" />
       <updated>1731706859151</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Setter zur Verfügung gestellt">
+      <option name="closed" value="true" />
+      <created>1731749113278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749113278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Logik in GUI bezüglich Eingabe-, Ausgabekurs und Währung bearbeiten bezüglich Währungskurs setzen eingebaut. Automatische Ermittlung Währungskurs fehlt noch.">
+      <option name="closed" value="true" />
+      <created>1731749191240</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749191240</updated>
+    </task>
+    <task id="LOCAL-00010" summary="automatische Änderung XML-Dateien hochgeladen">
+      <option name="closed" value="true" />
+      <created>1731749236515</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749236515</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +179,9 @@
     <MESSAGE value="Umbenannt und Check einkopiert" />
     <MESSAGE value="To-Do's eingefügt. FeldWechselkurs darf nur bearbeitet werden, wenn Checkbox dahinter markiert wurde, eingefügt." />
     <MESSAGE value="Auslesen Badiobutton eingefügt in Methode und &quot;enn der Eingabe- oder Ausgabekurs verändert wird und beide angegeben sind, dann den Wechselkurs eintragen&quot; angefangen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auslesen Badiobutton eingefügt in Methode und &quot;enn der Eingabe- oder Ausgabekurs verändert wird und beide angegeben sind, dann den Wechselkurs eintragen&quot; angefangen" />
+    <MESSAGE value="Setter zur Verfügung gestellt" />
+    <MESSAGE value="Logik in GUI bezüglich Eingabe-, Ausgabekurs und Währung bearbeiten bezüglich Währungskurs setzen eingebaut. Automatische Ermittlung Währungskurs fehlt noch." />
+    <MESSAGE value="automatische Änderung XML-Dateien hochgeladen" />
+    <option name="LAST_COMMIT_MESSAGE" value="automatische Änderung XML-Dateien hochgeladen" />
   </component>
 </project>
