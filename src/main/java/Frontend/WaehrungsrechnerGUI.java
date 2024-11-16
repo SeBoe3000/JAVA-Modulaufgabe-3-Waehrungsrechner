@@ -199,8 +199,7 @@ public class WaehrungsrechnerGUI {
                 // TODO: Prüfung der Eingabe noch einbinden. Punkt statt Komma verwenden.
                 float eingabeZahl = Float.parseFloat(eingabe.getTextfield());
                 float eingabeKurs = Float.parseFloat(wechselkurs.getTextfield());
-                // TODO: Berechnung auslagern.
-                float ausgabeZahl = eingabeZahl * eingabeKurs;
+                float ausgabeZahl = Rechnungen.ermittelnAusgabe(eingabeZahl,eingabeKurs);
                 ausgabe.setTextField("" + ausgabeZahl);
             }
         };

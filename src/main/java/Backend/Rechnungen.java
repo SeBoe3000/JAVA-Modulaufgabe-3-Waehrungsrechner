@@ -35,5 +35,13 @@ public class Rechnungen {
         return wechselkursZahl;
     }
 
+    public static Float ermittelnAusgabe(Float eingabewaehrung, Float wechselkurs){
+        Float ergebnis = 0F;
+        Float eingabeZahl = eingabewaehrung;
+        Float eingabeKurs = wechselkurs;
+        // TODO: MaxValue überprüfen
+        ergebnis = eingabeZahl * eingabeKurs;
+        return ergebnis;
+    }
 
 }
