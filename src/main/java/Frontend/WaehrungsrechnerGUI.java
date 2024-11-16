@@ -155,29 +155,13 @@ public class WaehrungsrechnerGUI {
                 if(wechselkurs_chb.isSelected()){
                     wechselkurs.setTextField("");
                     wechselkurs.setEnabledTrue();
-                    ein_euro_rbtn.setEnabled(false);
-                    ein_usd_rbtn.setEnabled(false);
-                    ein_bath_rbtn.setEnabled(false);
-                    ein_yen_rbtn.setEnabled(false);
-                    ein_zloty_rbtn.setEnabled(false);
-                    aus_euro_rbtn.setEnabled(false);
-                    aus_usd_rbtn.setEnabled(false);
-                    aus_bath_rbtn.setEnabled(false);
-                    aus_yen_rbtn.setEnabled(false);
-                    aus_zloty_rbtn.setEnabled(false);
+                    setEingabebuttonEnabled(false);
+                    setAusgabebuttonEnabled(false);
                 } else {
                     wechselkurs.setEnabledFalse();
                     changeWechselkurs();
-                    ein_euro_rbtn.setEnabled(true);
-                    ein_usd_rbtn.setEnabled(true);
-                    ein_bath_rbtn.setEnabled(true);
-                    ein_yen_rbtn.setEnabled(true);
-                    ein_zloty_rbtn.setEnabled(true);
-                    aus_euro_rbtn.setEnabled(true);
-                    aus_usd_rbtn.setEnabled(true);
-                    aus_bath_rbtn.setEnabled(true);
-                    aus_yen_rbtn.setEnabled(true);
-                    aus_zloty_rbtn.setEnabled(true);
+                    setEingabebuttonEnabled(true);
+                    setAusgabebuttonEnabled(true);
                 }
             }
         };
@@ -261,6 +245,37 @@ public class WaehrungsrechnerGUI {
 
         return wechselkurs;
     };
+
+    public void setEingabebuttonEnabled(boolean truefalse) {
+        if (truefalse) {
+            ein_euro_rbtn.setEnabled(true);
+            ein_usd_rbtn.setEnabled(true);
+            ein_bath_rbtn.setEnabled(true);
+            ein_yen_rbtn.setEnabled(true);
+            ein_zloty_rbtn.setEnabled(true);
+        } else {
+            ein_euro_rbtn.setEnabled(false);
+            ein_usd_rbtn.setEnabled(false);
+            ein_bath_rbtn.setEnabled(false);
+            ein_yen_rbtn.setEnabled(false);
+            ein_zloty_rbtn.setEnabled(false);
+        }
+    }
+    public void setAusgabebuttonEnabled(boolean truefalse) {
+        if (truefalse) {
+            aus_euro_rbtn.setEnabled(true);
+            aus_usd_rbtn.setEnabled(true);
+            aus_bath_rbtn.setEnabled(true);
+            aus_yen_rbtn.setEnabled(true);
+            aus_zloty_rbtn.setEnabled(true);
+        } else {
+            aus_euro_rbtn.setEnabled(false);
+            aus_usd_rbtn.setEnabled(false);
+            aus_bath_rbtn.setEnabled(false);
+            aus_yen_rbtn.setEnabled(false);
+            aus_zloty_rbtn.setEnabled(false);
+        }
+    }
 
 
     public void main(){
