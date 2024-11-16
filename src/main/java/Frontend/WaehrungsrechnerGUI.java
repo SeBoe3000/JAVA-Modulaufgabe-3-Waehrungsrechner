@@ -123,6 +123,7 @@ public class WaehrungsrechnerGUI {
         // Feld Ausgabe Ergebnis hinzufügen
         gbc.gridy = 5; // Spalte
         gbc.gridx = 0; // Zeile
+        ausgabe.setEnabledFalse(); // Ausgabe generell für die Verwaltung sperren
         panel.add(ausgabe, gbc);
 
         // Panel dem Frame hinzufügen
