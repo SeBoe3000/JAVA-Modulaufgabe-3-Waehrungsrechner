@@ -1,5 +1,7 @@
 package Frontend;
 
+import Backend.Rechnungen;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -211,40 +213,15 @@ public class WaehrungsrechnerGUI {
         String ausgabe = RadioButton.getTextofRadiobutton(ausgabe_group);
 
         if (!eingabe.equals("") && !ausgabe.equals("") && eingabe != ausgabe){
-            System.out.println("Eingabe- und Ausgabekurs sind unterschiedlich");
-            String wechselkursBerechnet = ermittelnWechselkurs();
-            wechselkurs.setTextField(wechselkursBerechnet);
+            //System.out.println("Eingabe- und Ausgabekurs sind unterschiedlich");
+            Float wechselkursBerechnet = Rechnungen.ermittelnWechselkurs(eingabe, ausgabe);
+            wechselkurs.setTextField("" + wechselkursBerechnet);
 
         } else if (!eingabe.equals("") && !ausgabe.equals("") && eingabe == ausgabe) {
-            System.out.println("Eingabe- und Ausgabekurs sind identisch");
+            //System.out.println("Eingabe- und Ausgabekurs sind identisch");
             wechselkurs.setTextField("1");
         }
     }
-
-    public String ermittelnWechselkurs(){
-        String eingabe = RadioButton.getTextofRadiobutton(eingabe_group);
-        String ausgabe = RadioButton.getTextofRadiobutton(ausgabe_group);
-        String wechselkurs = "";
-        System.out.println(eingabe);
-        if (eingabe.equals("Euro") && ausgabe.equals("USD")) {
-            wechselkurs = "1,05";
-        } else if (eingabe.equals("Euro") && ausgabe.equals("Bath")) {
-            wechselkurs = "36,70";
-        } else if (eingabe.equals("Euro") && ausgabe.equals("Yen")) {
-            wechselkurs = "162,77";
-        } else if (eingabe.equals("Euro") && ausgabe.equals("Złoty")) {
-            wechselkurs = "4,32";
-        }
-
-        /*Wechselkurse
-          Euro --> USD    1 Euro = 1,05 USD
-          Euro --> Bath   1 Euro = 36,70 Bath
-          Euro --> Yen    1 Euro = 162,77 Yen
-          Euro --> Zloty  1 Euro = 4,32 Zloty
-          */
-
-        return wechselkurs;
-    };
 
     public void setEingabebuttonEnabled(boolean truefalse) {
         if (truefalse) {
