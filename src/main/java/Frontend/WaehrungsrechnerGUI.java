@@ -142,7 +142,6 @@ public class WaehrungsrechnerGUI {
 
     private void buttonListener() {
         /* To-Do's:
-        - Feld: ausgabe_group (Ausgabewährung ausgewählt) --> wenn Eingabewährung ausgewählt, dann wechselkurs einfügen
         - Feld: calc_btn --> Berechnung durchführen.
 
         Für Berechnung:
@@ -151,34 +150,35 @@ public class WaehrungsrechnerGUI {
         - Bei Fehler ggf. Felder rot umranden
         */
 
-        // Feld Wechselkurs darf nur bearbeitet werden, wenn Checkbox dahinter markiert wurde.
+        /* Wenn Checkbox hinter Wechselkurs markiert, dann
+        - Feld Wechselkurs editierbar machen
+        - Wechselkurs leeren
+        Wenn Checkbox hinter Wechselkurs demarkiert, dann
+        - Feld Wechselkurs sperren
+        - Wechselkurs ermitteln, wenn Eingabe- und Ausgabekurs angegeben */
         ActionListener wechselkurs_ausgrauen = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(wechselkurs_chb.isSelected()){
                     wechselkurs.setEnabledTrue();
+                    wechselkurs.setTextField(" ");
                 } else {
                     wechselkurs.setEnabledFalse();
+                    changeWechselkurs();
                 }
             }
         };
         wechselkurs_chb.addActionListener(wechselkurs_ausgrauen);
 
-        // Wenn der Eingabe- oder Ausgabekurs verändert wird und beide angegeben sind, dann den Wechselkurs eintragen
-        /*ActionListener wechselkurs_default = new ActionListener() {
+        /* Bei Änderung vom Eingabe- oder Ausgabekurs den Wechselkurs eintragen, wenn
+        - Eingabe- und Ausgabekurs angegeben sind (Bestandteil von Methode changeWechselkurs)
+         - Wechselkurs nicht veränderbar ist */
+        ActionListener wechselkurs_default = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String eingabe = RadioButton.getTextofRadiobutton(eingabe_group);
-                String ausgabe = RadioButton.getTextofRadiobutton(ausgabe_group);
-
-                if (eingabe.equals("Euro")){
-                    System.out.println("Hallo");
-                } else if (calculate_sign.equals("USD")) {
-                    System.out.println("du");
-                } else {
-                    wechselkurs = " ";
+                if(!wechselkurs_chb.isSelected()) {
+                    changeWechselkurs();
                 }
-
             }
         };
         ein_euro_rbtn.addActionListener(wechselkurs_default);
@@ -191,7 +191,22 @@ public class WaehrungsrechnerGUI {
         aus_bath_rbtn.addActionListener(wechselkurs_default);
         aus_yen_rbtn.addActionListener(wechselkurs_default);
         aus_zloty_rbtn.addActionListener(wechselkurs_default);
-        */
+    }
+
+    // Wechselkursermittlung, wenn Eingabe- und Ausgabekurs angegeben sind
+    public void changeWechselkurs (){
+        String eingabe = RadioButton.getTextofRadiobutton(eingabe_group);
+        String ausgabe = RadioButton.getTextofRadiobutton(ausgabe_group);
+
+        if (!eingabe.equals("") && !ausgabe.equals("") && eingabe != ausgabe){
+            System.out.println("Eingabe- und Ausgabekurs sind unterschiedlich");
+            // Wechselkurs ermitteln und in Feld eintragen für Euro, USD, Bath, Yen, Złoty;
+            wechselkurs.setTextField("Umrechnung");
+
+        } else if (!eingabe.equals("") && !ausgabe.equals("") && eingabe == ausgabe) {
+            System.out.println("Eingabe- und Ausgabekurs sind identisch");
+            wechselkurs.setTextField("1");
+        }
     }
 
 
