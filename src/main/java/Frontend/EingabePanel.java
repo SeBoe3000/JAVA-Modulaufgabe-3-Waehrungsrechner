@@ -22,8 +22,8 @@ public class EingabePanel extends JPanel{
         return textField.getText();
     }
 
-    public String getWaehrung(){
-        return textField.getText();
+    public void setTextField(String text) {
+        textField.setText(text);
     }
 
     // Methoden zum Schriftfarbe Eingabefeld auf rot setzen und zurück bei einem Fehler:
