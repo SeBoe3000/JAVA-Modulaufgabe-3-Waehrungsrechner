@@ -113,7 +113,6 @@ public class WaehrungsrechnerGUI {
         gbc.gridx = 0; // Zeile
         panel.add(wechselkurs_panel, gbc);
 
-
         // Feld Berechnen hinzufügen
         gbc.gridy = 4; // Spalte
         gbc.gridx = 0; // Zeile
@@ -142,15 +141,6 @@ public class WaehrungsrechnerGUI {
     }
 
     private void buttonListener() {
-        /* To-Do's:
-        - Feld: calc_btn --> Berechnung durchführen.
-
-        Für Berechnung:
-        - Eingabe, Eingabekurs, Ausgabekurs und Wechselkurs (wenn bearbeitbar) muss eingegeben sein.
-        - Eingabekurs darf nicht gleich Ausgabekurs sein
-        - Bei Fehler ggf. Felder rot umranden
-        */
-
         /* Wenn Checkbox hinter Wechselkurs markiert, dann
         - Feld Wechselkurs editierbar machen
         - Wechselkurs leeren
@@ -163,7 +153,7 @@ public class WaehrungsrechnerGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(wechselkurs_chb.isSelected()){
-                    wechselkurs.setTextField(" ");
+                    wechselkurs.setTextField("");
                     wechselkurs.setEnabledTrue();
                     ein_euro_rbtn.setEnabled(false);
                     ein_usd_rbtn.setEnabled(false);
@@ -214,6 +204,21 @@ public class WaehrungsrechnerGUI {
         aus_bath_rbtn.addActionListener(wechselkurs_default);
         aus_yen_rbtn.addActionListener(wechselkurs_default);
         aus_zloty_rbtn.addActionListener(wechselkurs_default);
+
+        // Berechnung durchführen
+        ActionListener rechnen = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Eingabe und Kurs in Zahl umwandeln
+                // TODO: Prüfung der Eingabe noch einbinden. Punkt statt Komma verwenden.
+                float eingabeZahl = Float.parseFloat(eingabe.getTextfield());
+                float eingabeKurs = Float.parseFloat(wechselkurs.getTextfield());
+                // TODO: Berechnung auslagern.
+                float ausgabeZahl = eingabeZahl * eingabeKurs;
+                ausgabe.setTextField("" + ausgabeZahl);
+            }
+        };
+        calc_btn.addActionListener(rechnen);
     }
 
     // Wechselkursermittlung, wenn Eingabe- und Ausgabekurs angegeben sind
@@ -223,14 +228,39 @@ public class WaehrungsrechnerGUI {
 
         if (!eingabe.equals("") && !ausgabe.equals("") && eingabe != ausgabe){
             System.out.println("Eingabe- und Ausgabekurs sind unterschiedlich");
-            // Wechselkurs ermitteln und in Feld eintragen für Euro, USD, Bath, Yen, Złoty;
-            wechselkurs.setTextField("Umrechnung");
+            String wechselkursBerechnet = ermittelnWechselkurs();
+            wechselkurs.setTextField(wechselkursBerechnet);
 
         } else if (!eingabe.equals("") && !ausgabe.equals("") && eingabe == ausgabe) {
             System.out.println("Eingabe- und Ausgabekurs sind identisch");
             wechselkurs.setTextField("1");
         }
     }
+
+    public String ermittelnWechselkurs(){
+        String eingabe = RadioButton.getTextofRadiobutton(eingabe_group);
+        String ausgabe = RadioButton.getTextofRadiobutton(ausgabe_group);
+        String wechselkurs = "";
+        System.out.println(eingabe);
+        if (eingabe.equals("Euro") && ausgabe.equals("USD")) {
+            wechselkurs = "1,05";
+        } else if (eingabe.equals("Euro") && ausgabe.equals("Bath")) {
+            wechselkurs = "36,70";
+        } else if (eingabe.equals("Euro") && ausgabe.equals("Yen")) {
+            wechselkurs = "162,77";
+        } else if (eingabe.equals("Euro") && ausgabe.equals("Złoty")) {
+            wechselkurs = "4,32";
+        }
+
+        /*Wechselkurse
+          Euro --> USD    1 Euro = 1,05 USD
+          Euro --> Bath   1 Euro = 36,70 Bath
+          Euro --> Yen    1 Euro = 162,77 Yen
+          Euro --> Zloty  1 Euro = 4,32 Zloty
+          */
+
+        return wechselkurs;
+    };
 
 
     public void main(){
