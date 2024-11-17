@@ -8,9 +8,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-public class WaehrungsrechnerGUI {
+public class WaehrungsrechnerGUI implements KeyListener {
     private static final JFrame frame = new JFrame("Waehrungsrechner");
 
     // Eingabebetrag
@@ -148,8 +150,72 @@ public class WaehrungsrechnerGUI {
         dateiname.setEnabledFalse();
         panel.add(berechnung_panel, gbc);
 
+        // KeyListener
+        frame.addKeyListener(this);
+        frame.setFocusable(true);
+
+        eingabe.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed (java.awt.event.KeyEvent evt){
+                if(evt.getKeyCode() == KeyEvent.VK_TAB) {
+                    frame.setFocusable(true);
+                }
+            }
+        });
+
         // Panel dem Frame hinzufügen
         frame.add(panel);
+    }
+
+    private void createHelp(){
+        JDialog dialog = new JDialog(frame, "Hilfe", true);
+        dialog.setSize(650, 250);
+        dialog.setLocationRelativeTo(frame);
+        dialog.setResizable(false);
+        GridBagLayout gridbag = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        JLabel text1 = new JLabel("Programm Währungsrechner");
+        JLabel text2 = new JLabel("Im Programm Währungsrechner kann unter Eingabe vom");
+        JLabel text3 = new JLabel("- Umzurechnenden Betrag,");
+        JLabel text4 = new JLabel("- Eingabe- und Ausgabewährung oder eines manuell angegebenen Kurses");
+        JLabel text5 = new JLabel("Beim Klick auf den = Button, das Ergebnis berechnet werden.");
+        JLabel text6 = new JLabel("Wird die Checkbox 'bearbeiten?' markiert, wird");
+        JLabel text7 = new JLabel("- die Eingabe- und Ausgabewährung gesperrt");
+        JLabel text8 = new JLabel("- das Feld Wechselkurs geleert und für die Bearbeitung freigegeben.");
+        JLabel text9 = new JLabel("Nach einer erfolgreichen Berechnung werden die Felder Dateiname und Dateiausgabe freigegeben.");
+        JLabel text10 = new JLabel("Für die Dateiausgabe muss ein Dateiname angegeben werden.");
+        JLabel text11 = new JLabel("Die ausgegebene Datei beinhaltet alle durchgeführten Berechnungen.");
+        JLabel text12 = new JLabel("Die Datei wird in der IDE abgespeichert.");
+
+        dialog.setLayout(gridbag);
+
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        dialog.add(text1, gbc);
+        gbc.gridy = 1;
+        dialog.add(text2, gbc);
+        gbc.gridy = 2;
+        dialog.add(text3, gbc);
+        gbc.gridy = 3;
+        dialog.add(text4, gbc);
+        gbc.gridy = 4;
+        dialog.add(text5, gbc);
+        gbc.gridy = 5;
+        dialog.add(text6, gbc);
+        gbc.gridy = 6;
+        dialog.add(text7, gbc);
+        gbc.gridy = 7;
+        dialog.add(text8, gbc);
+        gbc.gridy = 8;
+        dialog.add(text9, gbc);
+        gbc.gridy = 9;
+        dialog.add(text10, gbc);
+        gbc.gridy = 10;
+        dialog.add(text11, gbc);
+        gbc.gridy = 11;
+        dialog.add(text12, gbc);
+        gbc.gridy = 12;
+        dialog.setVisible(true);
     }
 
     private void fixxedFrame() {
@@ -282,9 +348,9 @@ public class WaehrungsrechnerGUI {
 
 
                 // Systemausgabe zum prüfen
-                for (int i = 0; i < ErgebnisseList.size(); i++) {
+                /*for (int i = 0; i < ErgebnisseList.size(); i++) {
                     System.out.println(ErgebnisseList.get(i));
-                }
+                }*/
             }
         };
         safe_btn.addActionListener(dateiausgabe);
@@ -380,4 +446,23 @@ public class WaehrungsrechnerGUI {
         });
     }
 
+    @Override
+    public void keyTyped(KeyEvent k){
+    }
+
+    @Override
+    public void keyPressed(KeyEvent k){
+    }
+
+    @Override
+    public void keyReleased(KeyEvent k){
+        switch (k.getKeyCode()){
+            case KeyEvent.VK_F1: {
+                createHelp();
+                break;
+            }
+        }
+
+    }
 }
+

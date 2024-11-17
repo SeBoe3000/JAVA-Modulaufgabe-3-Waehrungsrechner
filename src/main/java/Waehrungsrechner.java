@@ -5,5 +5,4 @@ public class Waehrungsrechner {
         WaehrungsrechnerGUI calc = new WaehrungsrechnerGUI();
         calc.main();
     }
-
 }
