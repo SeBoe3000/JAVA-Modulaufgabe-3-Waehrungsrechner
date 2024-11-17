@@ -1,8 +1,5 @@
 package Backend;
 
-import javax.swing.text.AttributeSet;
-import javax.swing.text.Document;
-import javax.swing.text.Element;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
