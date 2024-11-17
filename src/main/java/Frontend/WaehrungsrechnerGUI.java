@@ -1,5 +1,6 @@
 package Frontend;
 
+import Backend.Datei;
 import Backend.Ergebnisse;
 import Backend.Rechnungen;
 
@@ -45,7 +46,7 @@ public class WaehrungsrechnerGUI {
 
     // Berechnungen ausgeben
     JButton safe_btn = new JButton("Dateiausgabe");
-
+    EingabePanel dateiname = new EingabePanel("Dateiname: ");
     ArrayList<Ergebnisse> ErgebnisseList = new ArrayList<>();
 
     private void createGUI() {
@@ -135,10 +136,17 @@ public class WaehrungsrechnerGUI {
         panel.add(ausgabe, gbc);
 
         // Berechnungen ausgeben
+
+        JPanel berechnung_panel = new JPanel();
+        berechnung_panel.setLayout(new BoxLayout(berechnung_panel, BoxLayout.X_AXIS));
+        berechnung_panel.add(dateiname);
+        berechnung_panel.add(safe_btn);
+
         gbc.gridy = 6; // Spalte
         gbc.gridx = 0; // Zeile
         safe_btn.setEnabled(false); // Ausgabe nur möglich, wenn bereits Berechnungen durchgeführt
-        panel.add(safe_btn, gbc);
+        dateiname.setEnabledFalse();
+        panel.add(berechnung_panel, gbc);
 
         // Panel dem Frame hinzufügen
         frame.add(panel);
@@ -212,10 +220,10 @@ public class WaehrungsrechnerGUI {
                 float eingabeZahl = 0F;
                 float eingabeKurs = 0F;
 
-                if(checkValues(eingabe, "Umzurechnender Betrag")){
+                if(checkValues(eingabe, "Integer", "Im Feld wurde Umzurechnender Betrag keine Zahl eingetragen.")){
                     eingabeZahl = Float.parseFloat(eingabe.getTextfield());
                 }
-                if(checkValues(wechselkurs, "Wechselkurs")){
+                if(checkValues(wechselkurs, "Integer", "Im Feld Wechselkurs wurde keine Zahl eingetragen.")){
                     eingabeKurs = Float.parseFloat(wechselkurs.getTextfield());
                 }
 
@@ -231,7 +239,8 @@ public class WaehrungsrechnerGUI {
                         // Objekt erzeugen und abspeichern in ArrayList für die spätere Ausgabe
                         Ergebnisse ergebnis = new Ergebnisse(eingabeZahl, eingabe, eingabeKurs, ausgabeZahl, ausgabe);
                         ErgebnisseList.add(ergebnis);
-                        // Button für Dateiausgabe verwaltbar machen
+                        // Dateiname und Button für Dateiausgabe verwaltbar machen
+                        dateiname.setEnabledTrue();
                         safe_btn.setEnabled(true);
                         //System.out.println(ergebnis);
                     }
@@ -247,7 +256,33 @@ public class WaehrungsrechnerGUI {
         ActionListener dateiausgabe = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(int i = 0; i < ErgebnisseList.size(); i++){
+                String datei = "";
+                if (checkValues(dateiname, "String", "Es wurde kein Dateiname angegeben")) {
+                    datei = dateiname.getTextfield();
+
+                    // Datei erstellen und leeren
+                    try{
+                        Datei.createFile(datei);
+                    } catch (Exception exec){
+                        JOptionPane.showMessageDialog(null, "Allgemeiner Fehler beim erstellen der Datei", "Fehler", JOptionPane.ERROR_MESSAGE);
+                    }
+                    Datei.leerenFile(datei);
+
+                    // Datei befüllen
+                    for (int i = 0; i < ErgebnisseList.size(); i++) {
+                        // Element aus der Liste in einen String umwandeln und dann an writeFile übergeben
+                        String text = ErgebnisseList.get(i).toString();
+                        Datei.writeFile(datei, text);
+                    }
+                    // Nachricht ausgeben
+                    JOptionPane.showMessageDialog(null, "Bitte Programm schließen, um Datei zu erzeugen.");
+                }
+
+
+
+
+                // Systemausgabe zum prüfen
+                for (int i = 0; i < ErgebnisseList.size(); i++) {
                     System.out.println(ErgebnisseList.get(i));
                 }
             }
@@ -273,16 +308,19 @@ public class WaehrungsrechnerGUI {
     }
 
     // Prüfung auf gültige Eingaben
-    public boolean checkValues(EingabePanel input, String feld){
+    public boolean checkValues(EingabePanel input, String checkArt, String fehlernachricht){
         String check = input.getTextfield();
-        boolean check1 = EingabenCheck.isValidIntString(check);
-
+        boolean check1 = false;
+        if(checkArt == "Integer") {
+            check1 = EingabenCheck.isValidIntString(check);
+            // Ergebnis löschen bei zuvor durchgeführter Rechnung
+            ausgabe.setTextField("");
+        } else if (checkArt == "String") {
+            check1 = EingabenCheck.isValidString(check);
+        }
         // Text für Fehlermeldung
-        String text = "Im Feld '" + feld + "' wurde keine Zahl eingetragen.";
+        String text = fehlernachricht;
         String title = "Fehler";
-
-        // Ergebnis löschen bei zuvor durchgeführter Rechnung
-        ausgabe.setTextField("");
 
         // Bei korrekter Eingabe (z.B. nach Fehler) Schriftfarbe zurückändern.
         input.removeError();

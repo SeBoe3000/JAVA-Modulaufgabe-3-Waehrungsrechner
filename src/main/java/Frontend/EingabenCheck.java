@@ -29,5 +29,16 @@ public class EingabenCheck {
 
         return isValid;
     }
+
+    public static boolean isValidString(String eingabe){
+        boolean isValid = true;
+        // Mind. ein Zeichen muss vorhanden sein
+        if(eingabe.equals("")){
+            isValid = false;
+        } else {
+            isValid = true;
+        }
+        return isValid;
+    }
 }
 
