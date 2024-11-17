@@ -9,7 +9,7 @@ public class EingabenCheck {
                 break;
             }
         }
-        if(eingabe.equals("")){
+        if(eingabe.equals("")||eingabe.equals("0")){
             return false;
         }
         return isValid;
