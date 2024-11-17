@@ -195,13 +195,25 @@ public class WaehrungsrechnerGUI {
         ActionListener rechnen = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Eingabe und Kurs in Zahl umwandeln
-                // TODO: Prüfung der Eingabe noch einbinden. Punkt statt Komma verwenden.
-                float eingabeZahl = Float.parseFloat(eingabe.getTextfield());
-                float eingabeKurs = Float.parseFloat(wechselkurs.getTextfield());
+                // Eingabe und Kurs prüfen, in Zahl umwandeln und rechnen
+                float eingabeZahl = 0F;
+                float eingabeKurs = 0F;
+
+                if(checkValues(eingabe, "Umzurechnender Betrag")){
+                    eingabeZahl = Float.parseFloat(eingabe.getTextfield());
+                }
+                if(checkValues(wechselkurs, "Wechselkurs")){
+                    eingabeKurs = Float.parseFloat(wechselkurs.getTextfield());
+                }
+
                 try{
                     float ausgabeZahl = Rechnungen.ermittelnAusgabe(eingabeZahl,eingabeKurs);
-                    ausgabe.setTextField("" + ausgabeZahl);
+                    if (ausgabeZahl == 0F) {
+                        // Da die Felder initialisiert werden, wird bei einem Fehler sonst der Wert 0 angezeigt:
+                        ausgabe.setTextField("");
+                    } else {
+                        ausgabe.setTextField("" + ausgabeZahl);
+                    }
                 } catch (Exception exec){
                     JOptionPane.showMessageDialog(null, "Das Ergebnis ist nicht darstellbar, da Infinity", "Fehler", JOptionPane.ERROR_MESSAGE);
                 }
@@ -226,6 +238,33 @@ public class WaehrungsrechnerGUI {
             wechselkurs.setTextField("1");
         }
     }
+
+    // Prüfung auf gültige Eingaben
+    public boolean checkValues(EingabePanel input, String feld){
+        String check = input.getTextfield();
+        boolean check1 = EingabenCheck.isValidIntString(check);
+
+        // Text für Fehlermeldung
+        String text = "Im Feld '" + feld + "' wurde keine Zahl eingetragen.";
+        String title = "Fehler";
+
+        // Ergebnis löschen bei zuvor durchgeführter Rechnung
+        ausgabe.setTextField("");
+
+        // Bei korrekter Eingabe (z.B. nach Fehler) Schriftfarbe zurückändern.
+        input.removeError();
+
+        if (!(check1)){
+            // Beim Fehler die Schriftfarbe auf rotändern.
+            input.setError();
+            JOptionPane.showMessageDialog(null, text, title, JOptionPane.ERROR_MESSAGE);
+            return false;
+
+        } else {
+            return true;
+        }
+    }
+
 
     public void setEingabebuttonEnabled(boolean truefalse) {
         if (truefalse) {
