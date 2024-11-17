@@ -1,11 +1,13 @@
 package Frontend;
 
+import Backend.Ergebnisse;
 import Backend.Rechnungen;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class WaehrungsrechnerGUI {
     private static final JFrame frame = new JFrame("Waehrungsrechner");
@@ -40,6 +42,11 @@ public class WaehrungsrechnerGUI {
 
     // Ergebnis
     EingabePanel ausgabe = new EingabePanel("Ergebnis: ");
+
+    // Berechnungen ausgeben
+    JButton safe_btn = new JButton("Dateiausgabe");
+
+    ArrayList<Ergebnisse> ErgebnisseList = new ArrayList<>();
 
     private void createGUI() {
         JPanel panel = new JPanel();
@@ -127,6 +134,12 @@ public class WaehrungsrechnerGUI {
         ausgabe.setEnabledFalse(); // Ausgabe generell für die Verwaltung sperren
         panel.add(ausgabe, gbc);
 
+        // Berechnungen ausgeben
+        gbc.gridy = 6; // Spalte
+        gbc.gridx = 0; // Zeile
+        safe_btn.setEnabled(false); // Ausgabe nur möglich, wenn bereits Berechnungen durchgeführt
+        panel.add(safe_btn, gbc);
+
         // Panel dem Frame hinzufügen
         frame.add(panel);
     }
@@ -213,6 +226,14 @@ public class WaehrungsrechnerGUI {
                         ausgabe.setTextField("");
                     } else {
                         ausgabe.setTextField("" + ausgabeZahl);
+                        String eingabe = RadioButton.getTextofRadiobutton(eingabe_group);
+                        String ausgabe = RadioButton.getTextofRadiobutton(ausgabe_group);
+                        // Objekt erzeugen und abspeichern in ArrayList für die spätere Ausgabe
+                        Ergebnisse ergebnis = new Ergebnisse(eingabeZahl, eingabe, eingabeKurs, ausgabeZahl, ausgabe);
+                        ErgebnisseList.add(ergebnis);
+                        // Button für Dateiausgabe verwaltbar machen
+                        safe_btn.setEnabled(true);
+                        //System.out.println(ergebnis);
                     }
                 } catch (Exception exec){
                     JOptionPane.showMessageDialog(null, "Das Ergebnis ist nicht darstellbar, da Infinity", "Fehler", JOptionPane.ERROR_MESSAGE);
@@ -221,6 +242,18 @@ public class WaehrungsrechnerGUI {
             }
         };
         calc_btn.addActionListener(rechnen);
+
+
+        ActionListener dateiausgabe = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(int i = 0; i < ErgebnisseList.size(); i++){
+                    System.out.println(ErgebnisseList.get(i));
+                }
+            }
+        };
+        safe_btn.addActionListener(dateiausgabe);
+
     }
 
     // Wechselkursermittlung, wenn Eingabe- und Ausgabekurs angegeben sind
