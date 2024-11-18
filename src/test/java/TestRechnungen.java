@@ -15,6 +15,7 @@ public class TestRechnungen {
     - Yen nach Yen (gleiche Währung bedeutet 1)
     - Bath nach Yen (doppelte Umrechnung)
     - ungültige Angabe "hallo" im Eingabe- und Ausgabekurs
+    - leere Werte
     Achtung: funktioniert nur bei hardcodierten Wechselkursen. Ansonsten müsste dieser hier erst ermittelt werden.
      */
     static Stream<Arguments> wechselkursumrechnung(){
@@ -23,7 +24,8 @@ public class TestRechnungen {
                 Arguments.of("Yen", "Yen", 1.00F),
                 Arguments.of("Bath", "Yen", 4.43515F),
                 Arguments.of("hallo", "Euro", 0.0F),
-                Arguments.of("Euro", "hallo", 0.0F)
+                Arguments.of("Euro", "hallo", 0.0F),
+                Arguments.of("", "", 0.0F)
         );
     }
 
@@ -41,6 +43,7 @@ public class TestRechnungen {
     - Gültige Multiplikationen
     - Infinity (hier null)
     - sehr großes Ergebnis
+    - leerer Wert
     In Float kann nicht mehr als 1 Punkt angegeben werden. Der Test mit mehr als einem Punkt wird nicht getestet.
 
      */
