@@ -138,7 +138,6 @@ public class WaehrungsrechnerGUI implements KeyListener {
         panel.add(ausgabe, gbc);
 
         // Berechnungen ausgeben
-
         JPanel berechnung_panel = new JPanel();
         berechnung_panel.setLayout(new BoxLayout(berechnung_panel, BoxLayout.X_AXIS));
         berechnung_panel.add(dateiname);
@@ -313,11 +312,9 @@ public class WaehrungsrechnerGUI implements KeyListener {
                 } catch (Exception exec){
                     JOptionPane.showMessageDialog(null, "Das Ergebnis ist nicht darstellbar, da Infinity", "Fehler", JOptionPane.ERROR_MESSAGE);
                 }
-
             }
         };
         calc_btn.addActionListener(rechnen);
-
 
         ActionListener dateiausgabe = new ActionListener() {
             @Override
@@ -344,9 +341,6 @@ public class WaehrungsrechnerGUI implements KeyListener {
                     JOptionPane.showMessageDialog(null, "Bitte Programm schließen, um Datei zu erzeugen.");
                 }
 
-
-
-
                 // Systemausgabe zum prüfen
                 /*for (int i = 0; i < ErgebnisseList.size(); i++) {
                     System.out.println(ErgebnisseList.get(i));
@@ -354,7 +348,6 @@ public class WaehrungsrechnerGUI implements KeyListener {
             }
         };
         safe_btn.addActionListener(dateiausgabe);
-
     }
 
     // Wechselkursermittlung, wenn Eingabe- und Ausgabekurs angegeben sind
@@ -377,6 +370,7 @@ public class WaehrungsrechnerGUI implements KeyListener {
     public boolean checkValues(EingabePanel input, String checkArt, String fehlernachricht){
         String check = input.getTextfield();
         boolean check1 = false;
+
         if(checkArt == "Integer") {
             check1 = EingabenCheck.isValidIntString(check);
             // Ergebnis löschen bei zuvor durchgeführter Rechnung
@@ -384,6 +378,7 @@ public class WaehrungsrechnerGUI implements KeyListener {
         } else if (checkArt == "String") {
             check1 = EingabenCheck.isValidString(check);
         }
+
         // Text für Fehlermeldung
         String text = fehlernachricht;
         String title = "Fehler";
@@ -396,12 +391,10 @@ public class WaehrungsrechnerGUI implements KeyListener {
             input.setError();
             JOptionPane.showMessageDialog(null, text, title, JOptionPane.ERROR_MESSAGE);
             return false;
-
         } else {
             return true;
         }
     }
-
 
     public void setEingabebuttonEnabled(boolean truefalse) {
         if (truefalse) {
@@ -418,6 +411,7 @@ public class WaehrungsrechnerGUI implements KeyListener {
             ein_zloty_rbtn.setEnabled(false);
         }
     }
+
     public void setAusgabebuttonEnabled(boolean truefalse) {
         if (truefalse) {
             aus_euro_rbtn.setEnabled(true);
@@ -433,7 +427,6 @@ public class WaehrungsrechnerGUI implements KeyListener {
             aus_zloty_rbtn.setEnabled(false);
         }
     }
-
 
     public void main(){
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -462,7 +455,6 @@ public class WaehrungsrechnerGUI implements KeyListener {
                 break;
             }
         }
-
     }
 }
 
