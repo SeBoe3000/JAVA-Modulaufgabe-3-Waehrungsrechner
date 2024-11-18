@@ -167,53 +167,27 @@ public class WaehrungsrechnerGUI implements KeyListener {
 
     private void createHelp(){
         JDialog dialog = new JDialog(frame, "Hilfe", true);
-        dialog.setSize(650, 250);
+        dialog.setSize(600, 300);
         dialog.setLocationRelativeTo(frame);
         dialog.setResizable(false);
+
         GridBagLayout gridbag = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
-
-        JLabel text1 = new JLabel("Programm Währungsrechner");
-        JLabel text2 = new JLabel("Im Programm Währungsrechner kann unter Eingabe vom");
-        JLabel text3 = new JLabel("- Umzurechnenden Betrag,");
-        JLabel text4 = new JLabel("- Eingabe- und Ausgabewährung oder eines manuell angegebenen Kurses");
-        JLabel text5 = new JLabel("Beim Klick auf den = Button, das Ergebnis berechnet werden.");
-        JLabel text6 = new JLabel("Wird die Checkbox 'bearbeiten?' markiert, wird");
-        JLabel text7 = new JLabel("- die Eingabe- und Ausgabewährung gesperrt");
-        JLabel text8 = new JLabel("- das Feld Wechselkurs geleert und für die Bearbeitung freigegeben.");
-        JLabel text9 = new JLabel("Nach einer erfolgreichen Berechnung werden die Felder Dateiname und Dateiausgabe freigegeben.");
-        JLabel text10 = new JLabel("Für die Dateiausgabe muss ein Dateiname angegeben werden.");
-        JLabel text11 = new JLabel("Die ausgegebene Datei beinhaltet alle durchgeführten Berechnungen.");
-        JLabel text12 = new JLabel("Die Datei wird in der IDE abgespeichert.");
-
         dialog.setLayout(gridbag);
 
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.WEST;
-        dialog.add(text1, gbc);
-        gbc.gridy = 1;
-        dialog.add(text2, gbc);
-        gbc.gridy = 2;
-        dialog.add(text3, gbc);
-        gbc.gridy = 3;
-        dialog.add(text4, gbc);
-        gbc.gridy = 4;
-        dialog.add(text5, gbc);
-        gbc.gridy = 5;
-        dialog.add(text6, gbc);
-        gbc.gridy = 6;
-        dialog.add(text7, gbc);
-        gbc.gridy = 7;
-        dialog.add(text8, gbc);
-        gbc.gridy = 8;
-        dialog.add(text9, gbc);
-        gbc.gridy = 9;
-        dialog.add(text10, gbc);
-        gbc.gridy = 10;
-        dialog.add(text11, gbc);
-        gbc.gridy = 11;
-        dialog.add(text12, gbc);
-        gbc.gridy = 12;
+        dialog.add(new JLabel("Programm Währungsrechner"), new GridBaggy(0,0,1,1));
+        dialog.add(new JLabel("Im Programm Währungsrechner kann unter Eingabe vom"), new GridBaggy(0,1,1,1));
+        dialog.add(new JLabel("- Umzurechnenden Betrag,"), new GridBaggy(0,2,1,1));
+        dialog.add(new JLabel("- Eingabe- und Ausgabewährung oder eines manuell angegebenen Kurses"), new GridBaggy(0,3,1,1));
+        dialog.add(new JLabel("Beim Klick auf den = Button, das Ergebnis berechnet werden."), new GridBaggy(0,4,1,1));
+        dialog.add(new JLabel("Wird die Checkbox 'bearbeiten?' markiert, wird"), new GridBaggy(0,5,1,1));
+        dialog.add(new JLabel("- die Eingabe- und Ausgabewährung gesperrt"), new GridBaggy(0,6,1,1));
+        dialog.add(new JLabel("- das Feld Wechselkurs geleert und für die Bearbeitung freigegeben."), new GridBaggy(0,7,1,1));
+        dialog.add(new JLabel("Nach einer erfolgreichen Berechnung werden die Felder Dateiname und Dateiausgabe freigegeben."), new GridBaggy(0,8,1,1));
+        dialog.add(new JLabel("Für die Dateiausgabe muss ein Dateiname angegeben werden."), new GridBaggy(0,9,1,1));
+        dialog.add(new JLabel("Die ausgegebene Datei beinhaltet alle durchgeführten Berechnungen."), new GridBaggy(0,10,1,1));
+        dialog.add(new JLabel("Die Datei wird in der IDE abgespeichert."), new GridBaggy(0,11,1,1));
+
         dialog.setVisible(true);
     }
 
