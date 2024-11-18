@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// noch nicht funktionsfähig.
 public class Waehrungsimport {
     public static void main (String[] args) throws Exception {
         // XML von Webseite herunterladen
@@ -24,7 +25,7 @@ public class Waehrungsimport {
         in.close();
         out.close();
 
-        // File auslesen und relevante Zeilen in String Builder speichern
+        // File auslesen und relevante Zeilen als Element speichern
         File myFile;
         if (os.contains("Wind")) {
             myFile = new File("src\\main\\java\\Backend\\ImportierteWaehrungen.xml");
@@ -63,15 +64,6 @@ public class Waehrungsimport {
         } catch (FileNotFoundException e) {
             System.out.println("Die Datei existiert nicht");
         }
-
-
-
-
-        //System.out.println("Inhalt Builder: " + builder);
-
-
-
-
     }
 }
 

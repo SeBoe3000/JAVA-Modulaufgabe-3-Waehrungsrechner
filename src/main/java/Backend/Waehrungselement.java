@@ -1,5 +1,6 @@
 package Backend;
 
+// Für den automatischen Import der Währungen. Ist aber nicht fertig.
 public class Waehrungselement {
     private String waehrung;
     private float wechselkurs;
