@@ -31,6 +31,8 @@ public class Rechnungen {
             wechselkursZahl = wechselkursZahl * wechselkursEuroYen;
         } else if (ausgabe.equals("Złoty")) {
             wechselkursZahl = wechselkursZahl * wechselkursEuroZloty;
+        } else {
+            wechselkursZahl = 0F;
         }
         return wechselkursZahl;
     }
