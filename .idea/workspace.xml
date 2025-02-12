@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db45f4eb-0723-4714-a948-e568008ad2fa" name="Changes" comment="Punkte als gültige Angabe hinzugefügt. Es darf nur ein Punkt angegeben sein. Ebenfalls muss eine Zahl zwischen 1 und 9 eingegeben sein. Dadurch Prüfung auf gleich leer oder Null hinfällig.">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frontend/EingabenCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frontend/EingabenCheck.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="DEV" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SeBoe3000&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SeBoe3000/JAVA-Modulaufgabe-3-Selina.git&quot;,
+    &quot;accountId&quot;: &quot;42ffe936-10b8-460c-b436-be675b67812b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2otarEdZLcByUiUYre8VxsWcj68" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Waehrungsimport.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Waehrungsrechner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.XMLParserSAX.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;DEV&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db45f4eb-0723-4714-a948-e568008ad2fa" name="Changes" comment="" />
+      <created>1731691523268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731691523268</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Umgestellt auf Maven Projekt">
+      <option name="closed" value="true" />
+      <created>1731691837536</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731691837536</updated>
+    </task>
+    <task id="LOCAL-00002" summary="An allgemeinen Dateien durch vorherigen Commit etwas kaputt gemacht, das wieder korrigiert.">
+      <option name="closed" value="true" />
+      <created>1731696230369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731696230369</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Größe und Platzierung Fenster angegeben">
+      <option name="closed" value="true" />
+      <created>1731696435944</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731696435944</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Felder hinzugefügt und auf GUI angeordnet">
+      <option name="closed" value="true" />
+      <created>1731700940893</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731700940894</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Umbenannt und Check einkopiert">
+      <option name="closed" value="true" />
+      <created>1731703664575</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731703664575</updated>
+    </task>
+    <task id="LOCAL-00006" summary="To-Do's eingefügt. FeldWechselkurs darf nur bearbeitet werden, wenn Checkbox dahinter markiert wurde, eingefügt.">
+      <option name="closed" value="true" />
+      <created>1731705539630</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731705539630</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Auslesen Badiobutton eingefügt in Methode und &quot;enn der Eingabe- oder Ausgabekurs verändert wird und beide angegeben sind, dann den Wechselkurs eintragen&quot; angefangen">
+      <option name="closed" value="true" />
+      <created>1731706859151</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731706859151</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Setter zur Verfügung gestellt">
+      <option name="closed" value="true" />
+      <created>1731749113278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749113278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Logik in GUI bezüglich Eingabe-, Ausgabekurs und Währung bearbeiten bezüglich Währungskurs setzen eingebaut. Automatische Ermittlung Währungskurs fehlt noch.">
+      <option name="closed" value="true" />
+      <created>1731749191240</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749191240</updated>
+    </task>
+    <task id="LOCAL-00010" summary="automatische Änderung XML-Dateien hochgeladen">
+      <option name="closed" value="true" />
+      <created>1731749236515</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749236515</updated>
+    </task>
+    <task id="LOCAL-00011" summary="automatische Änderung XML-Dateien hochgeladen">
+      <option name="closed" value="true" />
+      <created>1731749767561</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749767561</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Sperren Feld Ergebnis">
+      <option name="closed" value="true" />
+      <created>1731749917238</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731749917238</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Währungsfelder ausgegraut, wenn manueller Kurs eingegeben werden soll">
+      <option name="closed" value="true" />
+      <created>1731750522755</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1731750522755</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Berechnung und Wechselkurse angefangen einzubinden">
+      <option name="closed" value="true" />
+      <created>1731758441418</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1731758441418</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Ausgrauen Buttons in Methode ausgelagert">
+      <option name="closed" value="true" />
+      <created>1731773034487</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1731773034487</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Währungsberechnung umgesetzt und in Methode Rechnungen eingebunden.">
+      <option name="closed" value="true" />
+      <created>1731775374008</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1731775374008</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Berechnung Ergebnis mal Währungskurs ausgelagert.">
+      <option name="closed" value="true" />
+      <created>1731776246718</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1731776246718</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Automatischer Währungsimport - Herunterladen von XML-Datei erstellt.">
+      <option name="closed" value="true" />
+      <created>1731779034651</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1731779034651</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Automatischer Währungsimport - Auslesen von Datei und Elemente daraus abspeichern.">
+      <option name="closed" value="true" />
+      <created>1731791111660</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1731791111660</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Überprüfung auf Infinity eingebaut. Innerhalb Backend wird Prüfung durchgeführt und Fehlermeldung ans Frontend weitergegeben.">
+      <option name="closed" value="true" />
+      <created>1731835172398</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731835172398</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Eingabe einer 0 ist auch ein Fehler">
+      <option name="closed" value="true" />
+      <created>1731840464727</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1731840464727</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Prüfung auf gültige Eingabe eingebunden, mit Fehlermeldungen und rotem Text.">
+      <option name="closed" value="true" />
+      <created>1731840506680</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1731840506680</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Punkte als gültige Angabe hinzugefügt. Es darf nur ein Punkt angegeben sein. Ebenfalls muss eine Zahl zwischen 1 und 9 eingegeben sein. Dadurch Prüfung auf gleich leer oder Null hinfällig.">
+      <option name="closed" value="true" />
+      <created>1731842610200</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731842610200</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Umgestellt auf Maven Projekt" />
+    <MESSAGE value="Branchwechsel" />
+    <MESSAGE value="An allgemeinen Dateien durch vorherigen Commit etwas kaputt gemacht, das wieder korrigiert." />
+    <MESSAGE value="Größe und Platzierung Fenster angegeben" />
+    <MESSAGE value="Felder hinzugefügt und auf GUI angeordnet" />
+    <MESSAGE value="Umbenannt und Check einkopiert" />
+    <MESSAGE value="To-Do's eingefügt. FeldWechselkurs darf nur bearbeitet werden, wenn Checkbox dahinter markiert wurde, eingefügt." />
+    <MESSAGE value="Auslesen Badiobutton eingefügt in Methode und &quot;enn der Eingabe- oder Ausgabekurs verändert wird und beide angegeben sind, dann den Wechselkurs eintragen&quot; angefangen" />
+    <MESSAGE value="Setter zur Verfügung gestellt" />
+    <MESSAGE value="Logik in GUI bezüglich Eingabe-, Ausgabekurs und Währung bearbeiten bezüglich Währungskurs setzen eingebaut. Automatische Ermittlung Währungskurs fehlt noch." />
+    <MESSAGE value="automatische Änderung XML-Dateien hochgeladen" />
+    <MESSAGE value="Sperren Feld Ergebnis" />
+    <MESSAGE value="Währungsfelder ausgegraut, wenn manueller Kurs eingegeben werden soll" />
+    <MESSAGE value="Berechnung und Wechselkurse angefangen einzubinden" />
+    <MESSAGE value="Ausgrauen Buttons in Methode ausgelagert" />
+    <MESSAGE value="Währungsberechnung umgesetzt und in Methode Rechnungen eingebunden." />
+    <MESSAGE value="Berechnung Ergebnis mal Währungskurs ausgelagert." />
+    <MESSAGE value="Automatischer Währungsimport - Herunterladen von XML-Datei erstellt." />
+    <MESSAGE value="Automatischer Währungsimport - Auslesen von Datei und Elemente daraus abspeichern." />
+    <MESSAGE value="Überprüfung auf Infinity eingebaut. Innerhalb Backend wird Prüfung durchgeführt und Fehlermeldung ans Frontend weitergegeben." />
+    <MESSAGE value="Eingabe einer 0 ist auch ein Fehler" />
+    <MESSAGE value="Prüfung auf gültige Eingabe eingebunden, mit Fehlermeldungen und rotem Text." />
+    <MESSAGE value="Punkte als gültige Angabe hinzugefügt. Es darf nur ein Punkt angegeben sein. Ebenfalls muss eine Zahl zwischen 1 und 9 eingegeben sein. Dadurch Prüfung auf gleich leer oder Null hinfällig." />
+    <option name="LAST_COMMIT_MESSAGE" value="Punkte als gültige Angabe hinzugefügt. Es darf nur ein Punkt angegeben sein. Ebenfalls muss eine Zahl zwischen 1 und 9 eingegeben sein. Dadurch Prüfung auf gleich leer oder Null hinfällig." />
+  </component>
+</project>
